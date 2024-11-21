@@ -1,0 +1,61 @@
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 화면 전체 높이 */
+  background-color: #f1f1f1; /* 배경색 */
+}
+
+form {
+  background-color: white;
+  padding: 30px;
+  width: 100%;
+  max-width: 550px; /* 폼 너비 제한 */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* 전체 폼을 수직 방향으로 배치 */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* label과 input을 세로로 배치 */
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 5px; /* label과 input 사이에 간격을 추가 */
+}
+
+.form-group input {
+  height: 45px; /* 입력 칸 높이 증가 */
+  padding: 10px; /* 입력 칸 패딩 추가 */
+  font-size: 16px; /* 글씨 크기 증가 */
+  border: 1px solid #ccc; /* 입력 칸 테두리 */
+  border-radius: 4px; /* 입력 칸 테두리 둥글게 */
+}
+
+button {
+  width: 100%; /* 버튼을 전체 너비로 설정 */
+  padding: 10px;
+  background-color: #d9534f; /* 버튼 배경색 */
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c9302c; /* 버튼 호버 효과 */
+}
+
+a {
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -29,6 +29,9 @@
   justify-content: space-between;
   border-radius: 0.5rem;
 }
+.subscribe__btn{
+  width: 150px;
+}
 
 .light-theme .newsletter {
   background: linear-gradient(
@@ -42,6 +45,7 @@
 .light-theme .subscribe__btn {
   background: var(--primary-color);
   color: #fff;
+  
 }
 
 @media only screen and (max-width: 992px){

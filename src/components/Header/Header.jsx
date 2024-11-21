@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./header.css";
 
@@ -7,37 +8,28 @@ const nav__links = [
     path: "#home",
     display: "Home",
   },
-
   {
     path: "#about",
     display: "About",
   },
-
   {
     path: "#service",
     display: "Service",
   },
-
   {
     path: "#projects",
     display: "Projects",
   },
-
   {
     path: "#blog",
     display: "Blog",
-  },
-  
-  {
-    path: "#login",
-    display: "Login",
   },
 ];
 
 const Header = ({ theme, toggleTheme }) => {
   const headerRef = useRef(null);
-
   const menuRef = useRef(null);
+
 
   const headerFunc = () => {
     if (
@@ -70,6 +62,7 @@ const Header = ({ theme, toggleTheme }) => {
 
   const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
 
+
   return (
     <header className="header" ref={headerRef}>
       <div className="container">
@@ -92,6 +85,12 @@ const Header = ({ theme, toggleTheme }) => {
                   </a>
                 </li>
               ))}
+              {/* 로그인 버튼 추가 */}
+              <li className="menu__item">
+              <Link to="/login" className="menu__link">
+                  Login
+                </Link>
+              </li>
             </ul>
           </div>
 
