@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Router, Routes, Route 임포트
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import About from "./components/UI/About";
-import Blog from "./components/UI/Blog";
+import Home from "./components/UI/Home";  // Home 컴포넌트 임포트
+import Login from "./components/UI/Login";
+import About from "./components/UI/About";  // About 컴포넌트 임포트
+import Services from "./components/UI/Services";  // Services 컴포넌트 임포트
+import Blog from "./components/UI/Blog";  // Blog 컴포넌트 임포트
 import Counter from "./components/UI/Counter";
-import Hero from "./components/UI/Hero";
-import Newsletter from "./components/UI/Newsletter";
-import Services from "./components/UI/Services";
-import Team from "./components/UI/Team";
-import Testimonial from "./components/UI/Testimonial";
-import Login from "./components/UI/Login"; // 로그인 페이지 임포트
 
 function App() {
   const [theme, setTheme] = useState("");
@@ -25,25 +21,16 @@ function App() {
   }, [theme]);
 
   return (
-    <Router> {/* <Router>로 감싸기 */}
+    <Router>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <Routes>
-        {/* 로그인 페이지를 새로운 경로로 설정 */}
-        <Route path="/login" element={<Login />} />
-        {/* 다른 페이지는 스크롤로 이동 */}
-        <Route path="/" element={
-          <>
-            <Hero theme={theme} />
-            <Counter />
-            <Services />
-            <About />
-            <Team />
-            <Blog />
-            <Testimonial />
-            <Newsletter />
-            <Footer />
-          </>
-        } />
+      <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home theme={theme} />} />  {/* 루트 경로에서 Home 렌더링 */}
+        <Route path="/about" element={<About />} />  {/* 절대 경로로 About 렌더링 */}
+        <Route path="/services" element={<Services />} />  {/* 절대 경로로 Services 렌더링 */}
+        <Route path="/projects" element={<Counter />} />  {/* 절대 경로로 Projects 렌더링 */}
+        <Route path="/blog" element={<Blog />} />  {/* 절대 경로로 Blog 렌더링 */}
+  
       </Routes>
     </Router>
   );
